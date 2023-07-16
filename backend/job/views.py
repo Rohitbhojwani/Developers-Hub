@@ -15,11 +15,10 @@ from rest_framework.permissions import IsAuthenticated
 
 @api_view(['GET'])
 def getAllJobs(request):
-    
     filterset = JobsFilter(request.GET, queryset=Job.objects.all().order_by('id'))
-    
+
     count = filterset.qs.count()
-    
+
     #Pagination: Number of results to be displayed per page
     resPerPage = 3
     paginator = PageNumberPagination()
@@ -36,12 +35,22 @@ def getAllJobs(request):
         })
 
 
+# @api_view(['GET'])
+# def getJob(request, pk):
+#     job = get_object_or_404(Job, id=pk)
+    
+#     serializer = JobSerializer(job, many=False)
+#     return Response(serializer.data)
+
 @api_view(['GET'])
 def getJob(request, pk):
     job = get_object_or_404(Job, id=pk)
-    
+
+    candidates = job.candidatesapplied_set.all().count()
+
     serializer = JobSerializer(job, many=False)
-    return Response(serializer.data)
+
+    return Response({'job': serializer.data, 'candidates': candidates})
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated]) 
@@ -114,7 +123,6 @@ def getTopicStats(request, topic):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def applyToJob(request, pk):
-    
     user = request.user
     job = get_object_or_404(Job, id=pk)
     
@@ -178,15 +186,15 @@ def getCurrentUserJobs(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getCandidatesApplied(request, pk):
-    
+
     user = request.user
     job = get_object_or_404(Job, id=pk)
-    
+
     if job.user != user:
         return Response({'error': 'You can not access this job'}, status=status.HTTP_403_FORBIDDEN)
-    
+
     candidates = job.candidatesapplied_set.all()
-    
+
     serializer = CandidatesAppliedSerializer(candidates, many=True)
-    
+
     return Response(serializer.data)

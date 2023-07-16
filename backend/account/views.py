@@ -12,11 +12,13 @@ from rest_framework.permissions import IsAuthenticated
 
 @api_view(['POST'])
 def register(request):
+    print("fff")
     data = request.data
-    
+    print(data)
     user = SignUpSerializer(data=data)
-    
+    print("sss")
     if user.is_valid():
+        print("print")
         if not User.objects.filter(username=data['email']).exists():
             user = User.objects.create(
                 first_name = data['first_name'],
@@ -25,7 +27,7 @@ def register(request):
                 email = data['email'],
                 password = make_password(data['password'])
             )
-            
+            print(user)
             return Response({
                 'message': 'User Registered.'},
                 status=status.HTTP_200_OK
