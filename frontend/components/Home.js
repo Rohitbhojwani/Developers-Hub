@@ -1,10 +1,12 @@
 import React from "react";
 import Link from 'next/link'
-
+import Image from 'next/image';
 import Pagination from "react-js-pagination";
 import Filters from "./layout/Filters";
 import JobItem from "./job/JobItem";
 import { useRouter } from "next/router";
+import ll from '../public/images/workwisww.svg'
+import bg from '../public/images/bg.png'
 
 
 const Home = ({data}) => {
@@ -35,6 +37,36 @@ const Home = ({data}) => {
   };
 
   return <>
+
+
+<div className="h-screen relative">
+  {/* <Image
+   src={ll}
+   alt="pic of dog"
+  //  fill={true}
+   width={600}
+   height={400}
+   layout="responsive"
+   objectFit="cover"
+  //  layout="fill"
+  /> */}
+
+  <Image src={bg} alt="Picture of the author"
+  //  fill={true}
+   width={600}
+   height={400}
+   layout="responsive"
+   objectFit="cover"
+  //  layout="fill"
+
+  />
+
+
+  {/* <Image alt="Landscape" src="/public/images/workwisw.png" width={100} height={100}/> */}
+  {/* <img src={`${process.env.PUBLIC_URL}/my-image.jpg`} /> */}
+  {/* <Image src={'https://s.tmimgcdn.com/scr/53500/jobsfactory-job-portal-multipage-html5-website-template_53534-original.jpg'} alt='Home Page' width={100} height={100} /> */}
+</div>
+
     <div className="container container-fluid">
       <div className="row">
         <div className="col-xl-3 col-lg-4">

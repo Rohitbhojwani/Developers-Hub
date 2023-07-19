@@ -103,6 +103,7 @@ def deleteJob(request, pk):
 
 @api_view(['GET'])
 def getTopicStats(request, topic):
+    
     args = { 'title__icontains': topic}
     jobs = Job.objects.filter(**args)
     

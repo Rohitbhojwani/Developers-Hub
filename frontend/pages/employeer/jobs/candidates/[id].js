@@ -32,7 +32,7 @@ export async function getServerSideProps({ req, params }) {
 
   try {
     const res = await axios.get(
-      `http://127.0.0.1:8000/api/job/${params.id}/candidates/`,
+      `http://127.0.0.1:8000/api/jobs/${params.id}/candidates/`,
       {
         headers: {
           Authorization: `Bearer ${access_token}`,

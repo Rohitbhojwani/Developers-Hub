@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import AuthContext from "../../context/AuthContext";
+import NavLogo from '../../public/logo4.png'
 
 
 const Header = ()=>{
@@ -19,13 +20,30 @@ const Header = ()=>{
       <Link href="/" legacyBehavior>
         <div className="logoWrapper">
           <div className="logoImgWrapper ">
-            <Image width="50" height="30" src="/images/logo.svg" alt=""/>
+            {/* <Image width="50" height="30" src="/images/logo.svg" alt=""/> */}
           </div>
-          <span className="logo1">Developers Hub</span>
+          {/* <span className="logo1">Developers Hub</span> */}
           {/* <span className="logo2">Hub</span> */}
+          <Image
+              
+              src={NavLogo}
+              alt='/'
+              width='115'
+              height='90'
+              className='cursor-pointer'
+              
+   
+            />
         </div>
       </Link>
+
       <div className="btnsWrapper">
+      <Link href="/search" legacyBehavior>
+        <button className="postAJobButton">
+          <span>Search A Job</span>
+          </button>
+        </Link>
+
         <Link href="/employeer/jobs/new" legacyBehavior>
           <button className="postAJobButton">
             <span>Post A Job</span>
@@ -41,7 +59,7 @@ const Header = ()=>{
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <span>Hi, {user.first_name}</span>{" "}
+                  <span>Hi, {user.first_name} {user.last_name}</span>{" "}
             </a>
 
             <div

@@ -228,7 +228,7 @@ const Filters = () => {
           onClick={(e) => handleClick(e.target)}
         />
         <label className="form-check-label" htmlFor="check11">
-          $1 - $50000
+          Rs 1 - Rs 50,000
         </label>
       </div>
 
@@ -243,7 +243,7 @@ const Filters = () => {
           onClick={(e) => handleClick(e.target)}
         />
         <label className="form-check-label" htmlFor="check12">
-          $50000 - $100,000
+        Rs 50,000 - Rs 1,00,000
         </label>
       </div>
 
@@ -258,7 +258,7 @@ const Filters = () => {
           onClick={(e) => handleClick(e.target)}
         />
         <label className="form-check-label" htmlFor="check13">
-          $100,000 - $200,000
+        Rs 1,00,000 - Rs 2,00,000
         </label>
       </div>
 
@@ -273,7 +273,7 @@ const Filters = () => {
           onClick={(e) => handleClick(e.target)}
         />
         <label className="form-check-label" htmlFor="defaultCheck2">
-          $300,000 - $500,000
+        Rs 3,00,000 - Rs 5,00,000
         </label>
       </div>
 
@@ -288,7 +288,22 @@ const Filters = () => {
           onClick={(e) => handleClick(e.target)}
         />
         <label className="form-check-label" htmlFor="check14">
-          $500,000 - $1,000,000
+        Rs 5,00,000 - Rs 10,00,000
+        </label>
+      </div>
+
+      <div className="form-check">
+        <input
+          className="form-check-input"
+          type="checkbox"
+          name="salary"
+          id="check15"
+          value="1000000-10000000"
+          defaultChecked={checkHandler("salary", "100000-10000000")}
+          onClick={(e) => handleClick(e.target)}
+        />
+        <label className="form-check-label" htmlFor="check15">
+        Rs 10,00,000 - Rs 1,00,00,000
         </label>
       </div>
 

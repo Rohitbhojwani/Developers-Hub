@@ -5,14 +5,14 @@ const Footer = () => {
     <footer className="py-1">
       <p className="text-center mt-1">
         Developers Hub - 2023-2024, All Rights Reserved
-        <a
+        {/* <a
           className="ml-4"
           rel="noreferrer"
           target="_blank"
           href="https://storyset.com/people"
         >
           People illustrations by Storyset
-        </a>
+        </a> */}
       </p>
     </footer>
   );

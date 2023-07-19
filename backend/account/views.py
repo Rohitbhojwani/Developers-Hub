@@ -83,9 +83,9 @@ def uploadResume(request):
     if not isValidFile:
         return Response({'error': 'Please upload only pdf file.'}, status=status.HTTP_400_BAD_REQUEST)
     
+    serializer = UserSerializer(user, many=False)
     
     user.userprofile.resume = resume
     user.userprofile.save()
     
-    serializer = UserSerializer(user, many=False)
     return Response(serializer.data)

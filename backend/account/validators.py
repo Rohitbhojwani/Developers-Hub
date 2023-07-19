@@ -9,4 +9,4 @@ def validate_file_extension(name):
     if not ext.lower() in valid_extensions:
         isValid = False
         
-        return isValid
+    return isValid

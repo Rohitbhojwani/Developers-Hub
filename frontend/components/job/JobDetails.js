@@ -99,7 +99,7 @@ const JobDetails = ({ job, candidates, access_token }) => {
                     <tr>
                       <td>Expected Salary</td>
                       <td>:</td>
-                      <td>${job.salary}</td>
+                      <td>Rs {job.salary}</td>
                     </tr>
 
                     <tr>

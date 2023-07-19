@@ -75,8 +75,8 @@ body {
   margin-left: 1rem;
   cursor: pointer;
   border-radius: 2px;
-  height: 35px;
-  width: 120px;
+  height: 402x;
+  width: 135px;
   transition: all 0.5s;
 }
 .postAJobButton span {
@@ -85,7 +85,7 @@ body {
   position: relative;
   color: rgb(255, 255, 255);
   font-weight: bold;
-  font-size: 12px;
+  font-size: 13.2px;
   transition: 0.5s;
 }
 

@@ -6,14 +6,14 @@ const Footer = () => {
     <footer className="py-1">
       <p className="text-center mt-1">
         Jobbee - 2021-2022, All Rights Reserved
-        <Link
+        {/* <Link
           className="ml-4"
           rel="noreferrer"
           target="_blank"
           href="https://storyset.com/people"
         >
           People illustrations by Storyset
-        </Link>
+        </Link> */}
       </p>
     </footer>
   )
